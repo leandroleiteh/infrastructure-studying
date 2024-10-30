@@ -37,7 +37,7 @@ jobs:
         run: gh issue comment "$NUMBER" --repo "$REPO" --body "$BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NUMBER: ${{ hithub.event.issue.number }}
+          NUMBER: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
           BODY: >
             O bucket s3 foi criado com sucesso!
