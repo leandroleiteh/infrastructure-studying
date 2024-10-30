@@ -32,11 +32,10 @@ jobs:
           terraform apply -auto-approve -var="bucket_name=${{ env.BUCKET_NAME }}"
 
       - name: Add comment
-        uses: actions/gh-script@v2
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: |
-            gh issue comment "$NUMBER" --repo "$REPO" --body "O bucket s3 foi criado com sucesso!"
+        run: gh issue comment "$NUMBER" --repo "$REPO" --body "$BODY"
         env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
+          BODY: >
+            O bucket S3 foi criado com sucesso! 🎉
