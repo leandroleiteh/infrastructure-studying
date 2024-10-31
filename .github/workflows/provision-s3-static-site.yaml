@@ -3,6 +3,10 @@ name: Create s3 Static Site
 on:
   issues:
     types: [opened]
+    
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   terraform:
