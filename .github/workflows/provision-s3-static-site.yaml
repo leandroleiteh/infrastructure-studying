@@ -24,9 +24,9 @@ jobs:
       - name: Configure AWS credential
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: "arn:aws:iam::890742573521:role/github-actions-leandroleiteh-pipeline"
+          role-to-assume: arn:aws:iam::890742573521:role/github-actions-leandroleiteh-pipeline
           role-session-name: Github_to_AWS_via_FederatedOIDC
-          aws-region: "us-east-1"
+          aws-region: us-east-1
 
       - name: Extract Bucket Name from Issue
         run: |
