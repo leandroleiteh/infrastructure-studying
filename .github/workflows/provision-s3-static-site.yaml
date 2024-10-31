@@ -48,7 +48,7 @@ jobs:
       - name: Add comment
         run: gh issue comment "$NUMBER" --repo "$REPO" --body "$BODY"
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           NUMBER: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
           BODY: >
